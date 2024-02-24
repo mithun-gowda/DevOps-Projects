@@ -19,8 +19,8 @@ Here are some examples of top companies that use S3 event triggering:
 
 **S3 Bucket**: Amazon Simple Storage Service (S3) is a cloud-based object storage service provided by Amazon Web Services (AWS). S3 allows users to store and retrieve data from anywhere on the web.<br>
 
-**Lambda function**: 
-        <p>- A lambda function can be configured to trigger automatically in response to events such as adding a file to an S3 bucket. Once a file is added to the S3 bucket, the lambda function is invoked, and it can perform various actions based on the event.<br>
+<p>**Lambda function**: <br>
+        - A lambda function can be configured to trigger automatically in response to events such as adding a file to an S3 bucket. Once a file is added to the S3 bucket, the lambda function is invoked, and it can perform various actions based on the event.<br>
         - AWS STS (Security Token Service) and IAM (Identity and Access Management) play important roles in managing access and permissions for Lambda functions in AWS.<br>
         - **IAM**: an IAM role that grants permissions to the function. IAM roles define what AWS resources the function can access and what actions it can perform on those resources.<br>
         - **AWS STS**: The AWS STS service provides temporary security credentials that can be used by Lambda functions to access other AWS resources. <br>
