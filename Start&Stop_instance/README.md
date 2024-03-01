@@ -7,21 +7,21 @@
 <li>Step 2: Create IAM roles</li>
 <ul>
   <li>Before creating IAM Roles, Create Policy where in Specify Permissions - Actions Allowed, select startInstance and StopInstance policy</li>
-  <li>Add ARN(s)</li>
+  <li><b>Add ARN(s)</b></li>
     <ul>
       <li>Resource Region: us-east-1 (region which you created instance)</li>
       <li>Resource Instance: Attach Instance Id</li>
       <li>Review and create UI: Enter Policy Name and Add Description</li>
       <li>Enter Create Policy: DONE</li>
     </ul>
-  <li>Create Role: </li>
+  <li><b>Create Role: </b></li>
   <ul>
     <li>Select trusted entity: Select AWS Service, Use case: Lambda </li>
     <li>Add permissions: Select Policy name which is created</li>
     <li>Role Details: Add rolename, Description and Adding Tags (optional)</li>
     <li>Role created: DONE</li>
   </ul>
-  <li>Select  Lambda in service</li>
+  <li><b>Select  Lambda in service</b></li>
   <ul>
     <li>Click on create lambda function</li>
     <li>Add Function name</li>
