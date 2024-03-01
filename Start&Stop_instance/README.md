@@ -1,1 +1,63 @@
-##
+## These Project is to start and stop instance using Lambda Function
+
+
+<h4>To start and stop an instance using an AWS Lambda function, you'll typically follow these steps</h4>
+
+<li>Step 1: Launch Instance</li>
+<li>Step 2: Create IAM roles</li>
+<ul>
+  <li>Before creating IAM Roles, Create Policy where in Specify Permissions - Actions Allowed, select startInstance and StopInstance policy</li>
+  <li>Add ARN(s)</li>
+    <ul>
+      <li>Resource Region: us-east-1 (region which you created instance)</li>
+      <li>Resource Instance: Attach Instance Id</li>
+      <li>Review and create UI: Enter Policy Name and Add Description</li>
+      <li>Enter Create Policy: DONE</li>
+    </ul>
+  <li>Create Role: </li>
+  <ul>
+    <li>Select trusted entity: Select AWS Service, Use case: Lambda </li>
+    <li>Add permissions: Select Policy name which is created</li>
+    <li>Role Details: Add rolename, Description and Adding Tags (optional)</li>
+    <li>Role created: DONE</li>
+  </ul>
+  <li>Select  Lambda in service</li>
+  <ul>
+    <li>Click on create lambda function</li>
+    <li>Add Function name</li>
+    <li>Select runtine : Python:3.11 (select any runtime which you are familiar)</li>
+    <li>Change default execution role: Use an existing role</li>
+    <li><b>stop instance lambda function</b></li>
+    
+    
+    import boto3
+    region = 'us-east-1'
+    instances = ['i-12345cb6de4f78g9h', 'i-08ce9b2d7eccf6d26']
+    ec2 = boto3.client('ec2', region_name=region)
+
+    def lambda_handler(event, context):
+      ec2.stop_instances(InstanceIds=instances)
+      print(f'stopped your instances: {instances}')
+
+    
+
+<li><b>Start instance Lambda function</b></li>
+  
+    
+    import boto3
+
+    region = 'us-west-1'
+    instances = ['i-12345cb6de4f78g9h', 'i-08ce9b2d7eccf6d26']
+    ec2 = boto3.client('ec2', region_name=region)
+
+    def lambda_handler(event, context):
+        ec2.start_instances(InstanceIds=instances)
+        print('started your instances: ' + str(instances))
+   
+
+<li>add above function as core source</li>
+<li>Test your Lambda function to ensure it starts and stops instances correctly.</li>
+<li>Deploy your Lambda function to make it available for use in your AWS environment.</li>
+</ul>
+
+</ul>
