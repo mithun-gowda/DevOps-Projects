@@ -6,7 +6,7 @@
 # 
 #
 # This script monitors the CPU usage and logs the information to a file
-#
+# check logged details : cat /var/log/cpu_monitor.log
 ##############
 
 set -x
