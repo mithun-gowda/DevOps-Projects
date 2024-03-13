@@ -1,3 +1,5 @@
+#  Project: Local Kubernetes Deployment with Minikube
+
 ## Step 1: Set Up a Local Kubernetes Cluster
 
 - Install Minikube on your local machine following the instructions provided in the Minikube documentation.
