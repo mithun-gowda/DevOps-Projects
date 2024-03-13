@@ -1,4 +1,4 @@
-
+# Cloud Cost Optimization — AWS
 
 ## Step 1: Set Up AWS Environment
 - Create an AWS Account: If you haven't already, sign up for an AWS account.
