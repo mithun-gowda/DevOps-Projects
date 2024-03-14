@@ -10,7 +10,17 @@
 ###################
 
 
-helper()
+# Function to raise errors if the required args are not entered
+# required args are : executor command organization_name repo_name
+function helper {
+    expected_cmd_args=2
+    if [ $# -ne $expected_cmd_args ]; then
+        echo "Please execute the script with required command line arguments: organization_name repo_name"
+        exit 1
+    fi
+}
+
+helper "$@" # Call helper function with command line arguments
 
 # GitHub API URL
 API_URL="https://api.github.com"
@@ -48,20 +58,7 @@ function list_users_with_read_access {
     fi
 }
 
-
-
-# Function to raise errors if the required args is not entered
-# required args are : executor command organization_name repo_name
-
-function helper{
-	expected_cmd_args=2
-	if [ $# -ne $expected_cmd_args]; then
-		echo "please execute the script with required cmd args"
-		echo "asd"
-	fi
-}
-	
 # Main script
-
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
 list_users_with_read_access
+
